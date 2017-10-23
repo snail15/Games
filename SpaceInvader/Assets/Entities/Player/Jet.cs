@@ -6,12 +6,16 @@ public class Jet : MonoBehaviour {
 
 	public float speed;
 	public GameObject laser;
+	public AudioClip laserSound;
 	public float laserSpeed;
 	public float fireRate = 0.2f;
+	public float health = 250f;
+	public int maxFire;
 
 
 	private float minX;
 	private float maxX;
+	private int remainingFire;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +24,7 @@ public class Jet : MonoBehaviour {
 		Vector3 right = Camera.main.ViewportToWorldPoint(new Vector3(1,0,distance));
 		minX = left.x;
 		maxX = right.x;
+		remainingFire = maxFire;
 	}
 
 	// Update is called once per frame
@@ -44,7 +49,40 @@ public class Jet : MonoBehaviour {
 	}
 
 	void Fire(){
-		GameObject beam = Instantiate (laser, this.transform.position, Quaternion.identity) as GameObject;
-		beam.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, laserSpeed, 0);
+		if (remainingFire > 0 && remainingFire <= maxFire) {
+			
+			Vector3 firePosition = transform.position + new Vector3 (0, 0.6f);
+			GameObject beam = Instantiate (laser, firePosition, Quaternion.identity) as GameObject;
+			beam.GetComponent<Rigidbody2D>().velocity = new Vector3 (0, laserSpeed, 0);
+			LaserSound ();
+			DecreaseRemainingFire ();
+
+
+		}
+	}
+
+	void LaserSound(){
+		AudioSource.PlayClipAtPoint (laserSound, transform.position);
+	}
+
+	void DecreaseRemainingFire(){
+		this.remainingFire -= 1;
+	}
+
+
+	void OnTriggerEnter2D(Collider2D col){
+		print ("Jet");
+		Laser laser = col.gameObject.GetComponent<Laser>();
+		if (laser != null) {
+			health -= laser.GetDamage();
+			laser.Destroy ();
+		}
+		if (health <= 0) {
+			Destroy (gameObject);
+		}
+	}
+
+	public void GainOneFire(){
+		this.remainingFire += 1;
 	}
 }
