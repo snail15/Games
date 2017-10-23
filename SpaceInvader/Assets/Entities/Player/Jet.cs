@@ -7,6 +7,7 @@ public class Jet : MonoBehaviour {
 	public float speed;
 	public GameObject laser;
 	public AudioClip laserSound;
+
 	public float laserSpeed;
 	public float fireRate = 0.2f;
 	public float health = 250f;
@@ -16,9 +17,14 @@ public class Jet : MonoBehaviour {
 	private float minX;
 	private float maxX;
 	private int remainingFire;
+	private GameObject director;
+	private LevelManager levelManager;
+
 
 	// Use this for initialization
 	void Start () {
+		director = GameObject.Find ("Gamedirector");
+		levelManager = GameObject.FindObjectOfType<LevelManager> ();
 		float distance = transform.position.z - Camera.main.transform.position.z;
 		Vector3 left = Camera.main.ViewportToWorldPoint(new Vector3(0,0,distance));
 		Vector3 right = Camera.main.ViewportToWorldPoint(new Vector3(1,0,distance));
@@ -65,13 +71,18 @@ public class Jet : MonoBehaviour {
 		AudioSource.PlayClipAtPoint (laserSound, transform.position);
 	}
 
+//	void ExplosionSound(){
+//		AudioSource.PlayClipAtPoint (explosionSound, transform.position);
+//	}
+
 	void DecreaseRemainingFire(){
 		this.remainingFire -= 1;
 	}
 
 
 	void OnTriggerEnter2D(Collider2D col){
-		print ("Jet");
+		print ("Jet Hit");
+		director.GetComponent<GameDirector> ().DecreaseHpGage ();
 		Laser laser = col.gameObject.GetComponent<Laser>();
 		if (laser != null) {
 			health -= laser.GetDamage();
@@ -79,10 +90,12 @@ public class Jet : MonoBehaviour {
 		}
 		if (health <= 0) {
 			Destroy (gameObject);
+			levelManager.LoadLoseScene ();
 		}
 	}
 
 	public void GainOneFire(){
 		this.remainingFire += 1;
 	}
+
 }

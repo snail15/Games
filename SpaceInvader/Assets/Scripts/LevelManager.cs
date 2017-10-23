@@ -13,4 +13,18 @@ public class LevelManager : MonoBehaviour {
 		Debug.Log ("Clicked!" + level );
 		SceneManager.LoadScene (level);
 	}
+
+	public void LoadNextLevel(){
+		int index = SceneManager.GetActiveScene ().buildIndex;
+		if (index < 3) {
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
+		} else {
+			SceneManager.LoadScene (5);
+		}
+
+	}
+
+	public void LoadLoseScene(){
+		SceneManager.LoadScene (4);
+	}
 }

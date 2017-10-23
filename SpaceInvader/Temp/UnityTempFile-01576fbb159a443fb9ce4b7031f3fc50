@@ -85,12 +85,13 @@
 -define:UNITY_EDITOR_OSX
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
-'Assets/BackgroundMusic.cs'
-'Assets/EnemyShredder.cs'
 'Assets/Entities/Enemy/Enemy.cs'
 'Assets/Entities/EnemyPosition/EnemySpawner.cs'
 'Assets/Entities/EnemyPosition/Position.cs'
 'Assets/Entities/Player/Jet.cs'
+'Assets/GameDirector.cs'
+'Assets/Scripts/BackgroundMusic.cs'
+'Assets/Scripts/EnemyShredder.cs'
 'Assets/Scripts/Laser.cs'
 'Assets/Scripts/LevelManager.cs'
 'Assets/Scripts/Shredder.cs'

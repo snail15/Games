@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
 	public GameObject enemyPrefab;
+	public LevelManager levelManager;
 
 	public float width = 10f;
 	public float height = 5f;
@@ -23,6 +24,7 @@ public class EnemySpawner : MonoBehaviour {
 		minX = leftEdge.x;
 		maxX = rightEdge.x;
 		SpawnEnemyUntilFull ();
+		levelManager = GameObject.FindObjectOfType<LevelManager> ();
 
 	}
 
@@ -75,7 +77,9 @@ public class EnemySpawner : MonoBehaviour {
 		}
 
 		if (AllMembersDead ()) {
-			SpawnEnemyUntilFull ();
+//			SpawnEnemyUntilFull ();
+			levelManager.LoadNextLevel ();
+
 		}
 	}
 

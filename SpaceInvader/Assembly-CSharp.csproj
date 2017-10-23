@@ -50,6 +50,7 @@
      <Compile Include="Assets\Entities\EnemyPosition\EnemySpawner.cs" />
      <Compile Include="Assets\Entities\EnemyPosition\Position.cs" />
      <Compile Include="Assets\Entities\Player\Jet.cs" />
+     <Compile Include="Assets\GameDirector.cs" />
      <Compile Include="Assets\Scripts\BackgroundMusic.cs" />
      <Compile Include="Assets\Scripts\EnemyShredder.cs" />
      <Compile Include="Assets\Scripts\Laser.cs" />

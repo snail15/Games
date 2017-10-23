@@ -89,6 +89,7 @@
 'Assets/Entities/EnemyPosition/EnemySpawner.cs'
 'Assets/Entities/EnemyPosition/Position.cs'
 'Assets/Entities/Player/Jet.cs'
+'Assets/GameDirector.cs'
 'Assets/Scripts/BackgroundMusic.cs'
 'Assets/Scripts/EnemyShredder.cs'
 'Assets/Scripts/Laser.cs'
