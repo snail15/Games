@@ -16,3 +16,7 @@
 /Users/sunginjung/Dropbox/Codes/Games/SpaceInvader/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/sunginjung/Dropbox/Codes/Games/SpaceInvader/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/sunginjung/Dropbox/Codes/Games/SpaceInvader/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/sunginjung/Dropbox/Codes/Games/SpaceInvader/Temp/bin/Debug/Assembly-CSharp.dll.mdb
+/Users/sunginjung/Dropbox/Codes/Games/SpaceInvader/Temp/bin/Debug/Assembly-CSharp.dll
+/Users/sunginjung/Dropbox/Codes/Games/SpaceInvader/obj/Debug/Assembly-CSharp.dll
+/Users/sunginjung/Dropbox/Codes/Games/SpaceInvader/obj/Debug/Assembly-CSharp.dll.mdb
