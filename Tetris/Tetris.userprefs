@@ -1,7 +1,12 @@
 ﻿<Properties StartupConfiguration="{96240DC9-F34D-F6DC-FC55-D250A865D3F5}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Prefabs/NewBehaviourScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ScoreKeeper.cs">
     <Files>
-      <File FileName="Assets/Prefabs/NewBehaviourScript.cs" Line="8" Column="17" />
+      <File FileName="Assets/Scripts/ShapeSpawner.cs" Line="20" Column="9" />
+      <File FileName="Assets/Scripts/Shape.cs" Line="32" Column="5" />
+      <File FileName="Assets/Scripts/GameScreen.cs" Line="29" Column="17" />
+      <File FileName="Assets/Scripts/BackgroundMusic.cs" Line="9" Column="18" />
+      <File FileName="Assets/Scripts/SoundManager.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/ScoreKeeper.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
