@@ -56,7 +56,7 @@ public class Shape : MonoBehaviour {
             }
         }
 		
-        if(Input.GetKey(KeyCode.DownArrow) || Time.time - lastMoveDown >= Shape.speed){
+        if(Input.GetKeyDown(KeyCode.DownArrow) || Time.time - lastMoveDown >= Shape.speed){
             transform.position += new Vector3(0, -1, 0);
             Debug.Log(transform.position);
             if (!isInGrid()) {
